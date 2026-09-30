@@ -317,13 +317,28 @@ input[type="submit"] {
 }
 
 /*acsess html*/
-.map img{ 
- width:100px;   
- aspect-ratio: 5/2;
+.shop-adress{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+
 }
 
-.map img image{
+.shop-map{
     width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+    
+}
+
+.shop-map iframe{
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 /*モバイル対応*/
@@ -338,10 +353,7 @@ input[type="submit"] {
         padding: 0 4%;
     }
 
-    /*index.html*/
-        {
-        padding: 28vh 0;
-    }
+
 
     /*menu.html*/
     .items {
