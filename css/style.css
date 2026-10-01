@@ -110,17 +110,22 @@ img {
 .hero.index {
     background-image: url(../images/heromono3.jpg);
     padding: 300px 0;
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+.hero.index.first-visit{
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 2.5s cubic-bezier(0.25, 1, 0.5, 1), transform 2.5s cubic-bezier(0.25, 1, 0.5, 1);
-
 }
 
-.hero.index.is-visible,
-.concept.is-visible {
+.hero.index.first-visit.is-visible{
     opacity: 1;
     transform: translateY(0);
 }
+
 
 .hero.access {
     background-image: url(../images/heromono3.jpg);
@@ -332,6 +337,18 @@ textarea {
     margin-top: 5px;
 
 }
+
+form input[type="checkbox"]{
+    display: inline-block;
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    cursor: pointer;
+    appearance: auto;
+}
+
+
 
 textarea {
     height: 140px;
