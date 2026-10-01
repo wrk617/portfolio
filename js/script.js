@@ -21,36 +21,29 @@ $(function() {
         }
     });
 
-   
-    // 2. メインビジュアル＆コンセプトのフェードイン
-    // 最初は少し下に下げて、透明にしておく
-    $('.hero, .concept').css({
-        'opacity': 0,
-        'transform': 'translateY(30px)',
-        'transition':'opacity 2.5s cubic-bezier(0.25, 1, 0.5, 1), transform 2.5s cubic-bezier(0.25, 1, 0.5, 1)'
-
-    });
-
-    // ページが完全に読み込まれたら、元の位置に戻して表示
-    $(window).on('load', function() {
-        $('.hero, .concept').css({
-            'opacity': 1,
-            'transform': 'translateY(0)'
-        });
-    });
-
-   
-    // 3. スクロールによるヘッダーの背景色変化
-    
-    $(window).on('scroll', function() {
-        // ヒーローエリアの高さを基準にする（これを超えたら色を変える）
-        var heroHeight = $('.hero').outerHeight() || 200; 
-        
-        if ($(this).scrollTop() > heroHeight) {
-            $('.header').addClass('is-active'); // スクロールされたらクラスを追加
-        } else {
-            $('.header').removeClass('is-active'); // トップに戻ったらクラスを削除
+    $(document).ready(function() {
+          $(window).on('load', function() {
+        if ($('.hero.index').length) {
+            $('.hero.index').addClass('is-visible');
         }
     });
 
+   if ($('.hero.index').length) {
+        $(window).on('scroll', function() {
+            var heroHeight = $('.hero.index').outerHeight(); 
+            
+            if ($(this).scrollTop() > heroHeight) {
+                $('.header').addClass('is-active'); 
+            } else {
+                $('.header').removeClass('is-active'); 
+            }
+        });
+    }
+
+});
+
+
+   
+    
+       
 });

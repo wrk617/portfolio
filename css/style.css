@@ -88,40 +88,55 @@ img {
 
 /* すべてのページに適用　-　ヒーロー　-   **********************************/
 .hero {
+    width: 100%;
     padding: 137px 0;
     background-repeat: no-repeat;
     text-align: center;
     background-size: cover;
     background-position: center;
+    box-sizing: border-box;
+}
+
+.hero .hero-tittle,
+.hero h1 {
     color: #ffffff;
-    font-family:'Times New Roman', Times, serif;   
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: 100;
     text-shadow: 0 0 5px black;
-    font-weight: lighter;
+    margin: 0;
 }
 
 .hero.index {
-    padding: 300px;
-    /* height: 500px; */
     background-image: url(../images/heromono3.jpg);
-    background-position: 0 center;
-    background-size: 100%;
+    padding: 300px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 2.5s cubic-bezier(0.25, 1, 0.5, 1), transform 2.5s cubic-bezier(0.25, 1, 0.5, 1);
 
+}
+
+.hero.index.is-visible,
+.concept.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero.access {
     background-image: url(../images/heromono3.jpg);
+    margin-bottom: 50px;
 }
 
-.hero.menu {
+.hero.item {
     background-image: url(../images/heromono1.jpg);
-
+    margin-bottom: 50px;
 
 
 }
 
 .hero.contact {
     background-image: url(../images/heromono2.jpg);
-
+    margin-bottom: 50px;
 }
 
 /* すべてのページに適用　-　メイン　-   **********************************/
@@ -131,13 +146,13 @@ main {
     color: #393939;
 }
 
-.concept{
+.concept {
     text-align: center;
-    
+
 }
 
 main h2 {
-   
+
     margin: 60px 0 20px 0;
     border-bottom: 2px solid #993A23;
     padding: 0 0 5px 0;
@@ -145,23 +160,24 @@ main h2 {
     font-size: 1.3rem;
 }
 
-main p{
+main p {
     font-size: 16px;
 }
 
-.concept{
+.concept {
     text-align: center;
     margin: 60px 0;
 }
 
-.concept-title{
+.concept-title {
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: normal;
     margin-bottom: 20px;
     letter-spacing: 0.1em;
 }
-.concept-text{
+
+.concept-text {
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
     line-height: 2;
@@ -170,7 +186,7 @@ main p{
 }
 
 
-.banner{
+.banner {
     display: block;
     margin: 0 auto;
 
@@ -187,7 +203,7 @@ main p{
     z-index: 100;
 }
 
-.gotop img{
+.gotop img {
     width: 50px;
     height: auto;
     display: block;
@@ -234,17 +250,18 @@ main p{
     gap: 20px;
 
 }
+
 .item {
     text-align: center;
 }
 
-.item p{
+.item p {
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: 500;
 }
 
-strong{
+strong {
     font-weight: 450;
     font-size: 14px;
     font-family: 'Times New Roman', Times, serif;
@@ -257,30 +274,39 @@ strong{
     aspect-ratio: 4/3;
     overflow: hidden;
 }
+
 .items .item:nth-child(1) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(2) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(3) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(4) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(5) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(6) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(7) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(8) .item-pic img {
     transform: translateY(-92px);
 }
+
 .items .item:nth-child(9) .item-pic img {
     transform: translateY(-92px);
 }
@@ -293,10 +319,18 @@ form {
 }
 
 input[type="text"],
+select,
 textarea {
+    width: 100%;
     padding: 6px;
     width: 100%;
     font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin-top: 5px;
+
 }
 
 textarea {
@@ -305,6 +339,7 @@ textarea {
 
 .submit {
     text-align: center;
+    margin: 20px 10px;
 }
 
 input[type="submit"] {
@@ -317,7 +352,7 @@ input[type="submit"] {
 }
 
 /*acsess html*/
-.shop-adress{
+.shop-adress {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -326,19 +361,19 @@ input[type="submit"] {
 
 }
 
-.shop-map{
+.shop-map {
     width: 100%;
     max-width: 600px;
     display: flex;
     justify-content: center;
     margin: 0 auto 16px auto;
-    
+
 }
 
-.shop-map iframe{
+.shop-map iframe {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /*モバイル対応*/
